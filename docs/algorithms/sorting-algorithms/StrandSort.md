@@ -1,36 +1,25 @@
----
-id: strand-sort  
-title: Strand Sort Algorithm  
-sidebar_label: Strand Sort  
-sidebar_position: 18  
-description: "Strand Sort is a comparison-based sorting algorithm that extracts sorted sublists (strands) from an unsorted list and merges them to create the final sorted list."  
-tags: [Sorting Algorithms, strand-sort, sorting]  
----
 
-### Definition
 
-Strand Sort is a recursive, comparison-based sorting algorithm that works by pulling out sorted sublists (strands) from the original list and then merging them together to create the final sorted list. **Strand Sort** works best with linked lists due to its insertions and extraction steps but can also be implemented with arrays.
+# Strand Sort
 
----
+**Strand Sort** is a recursive, comparison-based sorting algorithm that works by pulling out sorted sublists (strands) from the original list and then merging them together to create the final sorted list. Strand Sort works best with linked lists due to its insertions and extraction steps but can also be implemented with arrays.
 
-### Characteristics
+## Characteristics
 
-- **Type**: Comparison-based, Recursive
-- **Stability**: Stable (preserves the relative order of equal elements)
-- **Time Complexity**:
-  - **Best Case**: O(n) (when the input list is already sorted)
-  - **Average Case**: O(n²)
-  - **Worst Case**: O(n²)
-- **Space Complexity**: O(n) (for merging sublists)
+- **Type:** Comparison-based, Recursive
+- **Stability:** Stable (preserves the relative order of equal elements)
+- **Time Complexity:**
+  - **Best Case:** O(n) (when the input list is already sorted)
+  - **Average Case:** O(n²)
+  - **Worst Case:** O(n²)
+- **Space Complexity:** O(n) (for merging sublists)
 
----
+## How it Works
 
-### How it Works
+1. **Extract Strands:** A sorted sublist (strand) is repeatedly pulled out from the unsorted list by taking elements in increasing order.
+2. **Merge:** Each extracted strand is merged into an existing sorted list.
 
-1. **Extract Strands**: A sorted sublist (strand) is repeatedly pulled out from the unsorted list by taking elements in increasing order.
-2. **Merge**: Each extracted strand is merged into an existing sorted list.
-
-#### Example:
+### Example:
 
 Consider the list: `[4, 2, 5, 3, 8, 7, 6, 1]`
 
@@ -39,9 +28,9 @@ Consider the list: `[4, 2, 5, 3, 8, 7, 6, 1]`
 - The remaining elements `[6, 1]` will form additional strands.
 - The strands are merged together to form a sorted list.
 
----
+## C++ Implementation
 
-### C++ Implementation
+Here's a simple C++ implementation of **Strand Sort** using vectors:
 
 ```cpp
 #include <iostream>
@@ -116,9 +105,7 @@ int main() {
 }
 ```
 
----
-
-### Usage
+## Usage
 
 1. Clone this repository or copy the code.
 2. Compile the code using any C++ compiler, such as `g++`:
@@ -131,21 +118,20 @@ int main() {
    ```
 4. The program will output the sorted list.
 
-#### Example Output
+### Example Output
 
 ```
 Sorted list: 1 2 3 4 5 6 7 8
 ```
 
----
-
-### Advantages
+## Advantages
 
 - Simple and intuitive.
 - Stable sorting algorithm.
 - Works well on data that has some presorted segments.
 
-### Disadvantages
+## Disadvantages
 
 - Not efficient for large datasets due to its O(n²) time complexity in the average and worst case.
 - Best suited for linked lists but can be adapted to arrays or vectors.
+
